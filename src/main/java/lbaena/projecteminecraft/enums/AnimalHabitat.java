@@ -6,16 +6,9 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum AnimalHabitat {
-    FOREST("Bosc"),
-    DESERT("Dessert"),
-    OCEAN("Oceà"),
-    MOUNTAIN("Muntanya"),
-    GRASSLAND("Pradera"),
-    WETLAND("Zona humida"),
-    URBAN("Zona urbana"),
-    TUNDRA("Tundra"),
-    JUNGLE("Jungla"),
-    OTHER("Altra");
+    GROUND("Terra"),
+    AIR("Aire"),
+    WATER("Aigua");
 
     private final String displayName;
 }
