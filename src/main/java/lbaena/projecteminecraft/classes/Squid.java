@@ -1,9 +1,12 @@
 
 package lbaena.projecteminecraft.classes;
 
+import lombok.ToString;
+import vicent.Bellver.Fitxers;
+
 import java.io.IOException;
 
-public class Fish extends AquaticAnimal {
+public class Squid extends AquaticAnimal {
 
     @Override
     public void Swim() {
@@ -23,6 +26,6 @@ public class Fish extends AquaticAnimal {
 
     @Override
     public void eliminaAnimal() throws IOException {
-        //  files.eliminaRegistreFitxerObjecte(this);
+      //  files.eliminaRegistreFitxerObjecte(this);
     }
 }

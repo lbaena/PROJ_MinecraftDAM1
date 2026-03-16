@@ -1,7 +1,10 @@
 package lbaena.projecteminecraft.classes;
 
-public class Cow extends MammalAnimal {
+import vicent.Bellver.Fitxers;
 
+import java.io.IOException;
+
+public class Cow extends MammalAnimal {
 
     @Override
     public void Walk() {
@@ -11,5 +14,16 @@ public class Cow extends MammalAnimal {
     @Override
     public void Sound() {
 
+    }
+
+    @Override
+    public void guardaAnimal() throws IOException {
+        files.escriuFitxerText("a", false
+        );
+    }
+
+    @Override
+    public void eliminaAnimal() throws IOException {
+        //  files.eliminaRegistreFitxerObjecte(this);
     }
 }
