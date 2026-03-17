@@ -11,8 +11,13 @@ public class Launcher {
         handler.PrintUsers();
 
         Cow cow = new Cow();
-        cow.updateFile();
-        cow.removeFromFile();
+        AnimalHandler.printAnimals(cow);
+        System.out.println("AASDASD");
+
+        AnimalHandler.removeAnimal(cow);
+        AnimalHandler.printAnimals(cow);
+        System.out.println("AASDASD");
+
 
         Application.launch(HelloApplication.class, args);
     }
