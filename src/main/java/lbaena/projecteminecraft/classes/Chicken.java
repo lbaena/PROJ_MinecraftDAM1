@@ -3,15 +3,17 @@ package lbaena.projecteminecraft.classes;
 
 import java.io.IOException;
 
-public class Chicken extends BirdAnimal {
+import lbaena.projecteminecraft.interficies.IAnimalFunctions;
+
+public class Chicken extends BirdAnimal implements IAnimalFunctions {
 
     @Override
-    public void Fly() {
+    public void fly() {
 
     }
 
     @Override
-    public void Sound() {
+    public void sound() {
 
     }
 

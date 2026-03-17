@@ -39,7 +39,6 @@ javafx {
 
 dependencies {
     implementation("vicent.Bellver:missatges_i_alertes:4.0")
-    implementation("vicent.Bellver:Fitxers:25.26")
     implementation("org.projectlombok:lombok:1.18.42")
     implementation("com.google.zxing:core:3.5.4")
     implementation("com.google.zxing:javase:3.5.4")

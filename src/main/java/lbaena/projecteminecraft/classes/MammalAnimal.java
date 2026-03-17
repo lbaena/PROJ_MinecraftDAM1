@@ -8,5 +8,5 @@ public abstract class MammalAnimal extends Animal {
         super(AnimalType.MAMMAL, AnimalHabitat.GROUND, 100);
     }
 
-    public abstract void Walk();
+    public abstract void walk();
 }

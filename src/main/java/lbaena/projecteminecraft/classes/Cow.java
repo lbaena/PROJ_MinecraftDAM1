@@ -1,18 +1,20 @@
 package lbaena.projecteminecraft.classes;
 
-import vicent.Bellver.Fitxers;
+import lbaena.projecteminecraft.fitxers.Fitxers;
 
 import java.io.IOException;
 
-public class Cow extends MammalAnimal {
+import lbaena.projecteminecraft.interficies.IAnimalFunctions;
+
+public class Cow extends MammalAnimal implements IAnimalFunctions {
 
     @Override
-    public void Walk() {
+    public void walk() {
 
     }
 
     @Override
-    public void Sound() {
+    public void sound() {
 
     }
 

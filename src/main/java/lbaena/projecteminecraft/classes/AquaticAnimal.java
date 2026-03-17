@@ -10,7 +10,7 @@ public abstract class AquaticAnimal extends Animal {
         super(AnimalType.AQUATIC, AnimalHabitat.WATER, 75);
     }
 
-    public abstract void Swim();
+    public abstract void swim();
 
     @Override
     public void guardaAnimal() throws IOException {

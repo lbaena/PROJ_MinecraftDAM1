@@ -3,15 +3,17 @@ package lbaena.projecteminecraft.classes;
 
 import java.io.IOException;
 
-public class Octupus extends AquaticAnimal {
+import lbaena.projecteminecraft.interficies.IAnimalFunctions;
+
+public class Octupus extends AquaticAnimal implements IAnimalFunctions {
 
     @Override
-    public void Swim() {
+    public void swim() {
 
     }
 
     @Override
-    public void Sound() {
+    public void sound() {
 
     }
 

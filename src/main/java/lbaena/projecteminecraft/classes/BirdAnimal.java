@@ -8,5 +8,5 @@ public abstract class BirdAnimal extends Animal {
         super(AnimalType.BIRD, AnimalHabitat.AIR, 50);
     }
 
-    public abstract void Fly();
+    public abstract void fly();
 }

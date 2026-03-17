@@ -4,7 +4,7 @@ import lbaena.projecteminecraft.enums.AnimalHabitat;
 import lbaena.projecteminecraft.enums.AnimalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import vicent.Bellver.Fitxers;
+import lbaena.projecteminecraft.fitxers.Fitxers;
 
 import java.io.IOException;
 
@@ -26,13 +26,13 @@ public abstract class Animal {
 
     protected Fitxers files = new Fitxers("./arxius_animals/" + getClass().getSimpleName().toLowerCase() + ".dat");  // fitxer per guardar dads de cada animal
 
-    public abstract void Sound();
+    public abstract void sound();
 
-    public void ChangeHealth(int amount) {
+    public void changeHealth(int amount) {
         healthPoints = Math.max(healthPoints - amount, 0);
     }
 
-    public void Eat(int amount) {
+    public void eat(int amount) {
         amount = Math.max(amount, 0);
         hunger = Math.max(hunger - amount, 0);
     }
