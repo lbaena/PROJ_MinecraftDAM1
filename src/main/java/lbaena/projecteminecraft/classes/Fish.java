@@ -18,13 +18,7 @@ public class Fish extends AquaticAnimal implements IAnimalFunctions {
     }
 
     @Override
-    public void guardaAnimal() throws IOException {
-        files.escriuFitxerText("a", false
-        );
-    }
-
-    @Override
-    public void eliminaAnimal() throws IOException {
-        //  files.eliminaRegistreFitxerObjecte(this);
+    public String getFilePath() {
+        return "fish.dat";
     }
 }

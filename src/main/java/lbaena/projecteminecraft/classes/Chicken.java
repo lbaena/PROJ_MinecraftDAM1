@@ -18,13 +18,7 @@ public class Chicken extends BirdAnimal implements IAnimalFunctions {
     }
 
     @Override
-    public void guardaAnimal() throws IOException {
-        files.escriuFitxerText("a", false
-        );
-    }
-
-    @Override
-    public void eliminaAnimal() throws IOException {
-        //  files.eliminaRegistreFitxerObjecte(this);
+    public String getFilePath() {
+        return "chicken.dat";
     }
 }

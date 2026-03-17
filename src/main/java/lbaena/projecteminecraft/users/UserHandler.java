@@ -20,6 +20,7 @@ public class UserHandler {
     }
 
     private void reloadUsers() {
+        //noinspection unchecked
         users = (List<User>)file.retornaObjectesFitxer(User.class);
     }
 

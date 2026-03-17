@@ -1,15 +1,16 @@
 package lbaena.projecteminecraft.classes;
 
+import lbaena.projecteminecraft.animals.AnimalHandler;
 import lbaena.projecteminecraft.enums.AnimalHabitat;
 import lbaena.projecteminecraft.enums.AnimalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lbaena.projecteminecraft.fitxers.Fitxers;
 
-import java.io.IOException;
+import java.io.Serializable;
+import java.util.UUID;
 
 @AllArgsConstructor
-public abstract class Animal {
+public abstract class Animal implements Serializable {
     @Getter
     public final AnimalType type;
     @Getter
@@ -21,10 +22,10 @@ public abstract class Animal {
     public String gender;
     public String weight;
 
+    public UUID uuid;
+
     private int healthPoints;
     private int hunger;
-
-    protected Fitxers files = new Fitxers("./arxius_animals/" + getClass().getSimpleName().toLowerCase() + ".dat");  // fitxer per guardar dads de cada animal
 
     public abstract void sound();
 
@@ -41,14 +42,28 @@ public abstract class Animal {
         this.type = type;
         this.habitat = habitat;
         this.healthPoints = healthPoints;
+
+        uuid = UUID.randomUUID();
         hunger = 0;
+
+        saveToFile();
     }
 
-    protected abstract void guardaAnimal() throws IOException;
-
-    protected abstract void  eliminaAnimal() throws IOException;
-
-    protected void mostraAnimals() throws IOException, InterruptedException {
-        files.mostraContingutFitxer();
+    public UUID getUuid() {
+        return uuid;
     }
+
+    protected void saveToFile() {
+        AnimalHandler.addAnimal(this);
+    }
+
+    public void updateFile() {
+        AnimalHandler.updateAnimal(this);
+    }
+
+    public void removeFromFile() {
+        AnimalHandler.removeAnimal(this);
+    }
+
+    public abstract String getFilePath();
 }

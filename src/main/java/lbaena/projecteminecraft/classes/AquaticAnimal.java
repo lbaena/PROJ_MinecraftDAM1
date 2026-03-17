@@ -11,15 +11,4 @@ public abstract class AquaticAnimal extends Animal {
     }
 
     public abstract void swim();
-
-    @Override
-    public void guardaAnimal() throws IOException {
-        files.escriuFitxerText("a", false
-        );
-    }
-
-    @Override
-    public void eliminaAnimal() throws IOException {
-        //  files.eliminaRegistreFitxerObjecte(this);
-    }
 }
