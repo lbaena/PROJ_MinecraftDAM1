@@ -44,9 +44,8 @@ public class ViewController {
                 } else {
                     StringBuilder sb = new StringBuilder();
 
-                    for (int i = 0; i < item.length; i++) {
-                        sb.append("Campo ").append(i + 1).append(": ")
-                                .append(item[i]).append("\n");
+                    for (String s : item) {
+                        sb.append(s).append("\n");
                     }
 
                     setText(sb.toString());

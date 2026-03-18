@@ -1,6 +1,7 @@
 package lbaena.projecteminecraft.classes;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import lbaena.projecteminecraft.animals.AnimalHandler;
@@ -27,13 +28,7 @@ public class Cow extends MammalAnimal implements IAnimalFunctions {
 
     @Override
     public String[] getParameters() {
-        String[] params = super.getParameters();
-        String[] newparams = new String[params.length + 1];
-
-        System.arraycopy(newparams, 0, params, 0, params.length);
-
-        newparams[params.length] = "Punts de llet: " + milkPoints;
-        return newparams;
+        return super.getParameters();
     }
 
     public static List<Cow> getCows() {
