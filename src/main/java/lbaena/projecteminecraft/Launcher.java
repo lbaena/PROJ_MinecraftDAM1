@@ -10,14 +10,6 @@ import java.util.Scanner;
 
 public class Launcher {
     public static void main(String[] args) {
-        Cow cow1 = new Cow();
-        Cow cow2 = new Cow();
-        Cow cow3 = new Cow();
-
-        cow1.saveToFile();
-        cow2.saveToFile();
-        cow3.saveToFile();
-
         javafx.application.Application.launch(Application.class, args);
     }
 }
