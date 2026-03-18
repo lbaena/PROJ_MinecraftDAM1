@@ -33,7 +33,7 @@ public class QRCodeGeneratorUtil {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         MatrixToImageWriter.writeToStream(matrix, "PNG", outputStream);
 
-        return Base64.getEncoder().encodeToString(outputStream.toByteArray());
+        return "data:image/png;base64," + Base64.getEncoder().encodeToString(outputStream.toByteArray());
     }
 
 }
