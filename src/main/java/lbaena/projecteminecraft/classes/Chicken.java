@@ -11,12 +11,12 @@ public class Chicken extends BirdAnimal implements IAnimalFunctions {
 
     @Override
     public void fly() {
-
+        System.out.println("La gallina pot volar");
     }
 
     @Override
     public void sound() {
-
+        System.out.println("Co co co");
     }
 
     public static List<Chicken> getChickens() {

@@ -11,12 +11,12 @@ public class Octupus extends AquaticAnimal implements IAnimalFunctions {
 
     @Override
     public void swim() {
-
+        System.out.println("El polp pot nedar");
     }
 
     @Override
     public void sound() {
-
+        System.out.println("Glu glu glu");
     }
 
     public static List<Octupus> getOctopuses() {

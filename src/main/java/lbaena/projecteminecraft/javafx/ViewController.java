@@ -7,6 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import lbaena.projecteminecraft.classes.Animal;
+import lbaena.projecteminecraft.classes.Chicken;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViewController {
 
@@ -15,53 +20,16 @@ public class ViewController {
 
     @FXML
     public void initialize() {
+        List<Animal> animals = new ArrayList<>();
 
-        // 🔹 PLACEHOLDER (tu array real irá aquí)
-        String[][] datos = {
-                {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"},
-                {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"},
-                {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"},
-                {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"}, {"Juan", "juan@mail.com", "Admin"},
-                {"Ana", "ana@mail.com", "User"},
-                {"Luis", "luis@mail.com", "Editor"},
-        };
+        animals.addAll(Chicken.getChickens());
+        animals.addAll(.getChickens());
+        animals.addAll(Chicken.getChickens());
+        animals.addAll(Chicken.getChickens());
 
-        // Convertir a lista observable
+
         listView.setItems(FXCollections.observableArrayList(datos));
 
-        // 🔥 Personalizar cómo se ve cada item
         listView.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(String[] item, boolean empty) {
@@ -70,7 +38,6 @@ public class ViewController {
                 if (empty || item == null) {
                     setText(null);
                 } else {
-                    // Mostrar cada campo en líneas separadas
                     StringBuilder sb = new StringBuilder();
 
                     for (int i = 0; i < item.length; i++) {

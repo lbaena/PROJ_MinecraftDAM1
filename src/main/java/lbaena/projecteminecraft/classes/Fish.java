@@ -11,12 +11,12 @@ public class Fish extends AquaticAnimal implements IAnimalFunctions {
 
     @Override
     public void swim() {
-
+        System.out.println("El peix pot nedar");
     }
 
     @Override
     public void sound() {
-
+        System.out.println("Glu glu glu");
     }
 
     public static List<Fish> getFishes() {

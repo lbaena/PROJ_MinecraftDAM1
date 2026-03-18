@@ -22,6 +22,7 @@ public abstract class Animal implements Serializable {
     public String gender;
     public String weight;
 
+    @Getter
     public UUID uuid;
 
     private int healthPoints;
@@ -46,10 +47,6 @@ public abstract class Animal implements Serializable {
         hunger = 0;
     }
 
-    public UUID getUuid() {
-        return uuid;
-    }
-
     public void saveToFile() {
         AnimalHandler.addAnimal(this);
     }
@@ -63,4 +60,17 @@ public abstract class Animal implements Serializable {
     }
 
     public abstract String getFilePath();
+
+    public String[] getParameters() {
+        return new String[] {
+                "Nom: " + name,
+                "Descripcio: " + description,
+                "Edat: " + age,
+                "Sexe: " + gender,
+                "Pes: " + weight,
+                "UUID: " + uuid.toString(),
+                "Punts de vida: " + healthPoints,
+                "Menjar: " + hunger
+        };
+    }
 }
