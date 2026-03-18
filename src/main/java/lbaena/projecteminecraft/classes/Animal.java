@@ -22,7 +22,7 @@ public abstract class Animal implements Serializable {
     public String gender;
     public String weight;
 
-    public UUID uuid = UUID.randomUUID();
+    public UUID uuid;
 
     private int healthPoints;
     private int hunger;
@@ -42,6 +42,7 @@ public abstract class Animal implements Serializable {
         this.type = type;
         this.habitat = habitat;
         this.healthPoints = healthPoints;
+        uuid = UUID.randomUUID();
         hunger = 0;
     }
 
