@@ -1,15 +1,18 @@
 package lbaena.projecteminecraft;
 
+import lbaena.projecteminecraft.animals.AnimalHandler;
+import lbaena.projecteminecraft.classes.Cow;
 import lbaena.projecteminecraft.javafx.Application;
 import lbaena.projecteminecraft.users.User;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Launcher {
     private static User user;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
 
         /*
         while (true) {
