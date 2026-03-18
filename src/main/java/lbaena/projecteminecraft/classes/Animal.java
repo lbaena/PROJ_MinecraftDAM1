@@ -43,15 +43,13 @@ public abstract class Animal implements Serializable {
         this.habitat = habitat;
         this.healthPoints = healthPoints;
         hunger = 0;
-
-        saveToFile();
     }
 
     public UUID getUuid() {
         return uuid;
     }
 
-    protected void saveToFile() {
+    public void saveToFile() {
         AnimalHandler.addAnimal(this);
     }
 

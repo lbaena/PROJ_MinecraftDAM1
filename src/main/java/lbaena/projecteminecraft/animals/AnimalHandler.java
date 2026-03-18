@@ -6,6 +6,11 @@ import lbaena.projecteminecraft.fitxers.Fitxers;
 import java.util.List;
 
 public class AnimalHandler {
+    public static Object getAnimals(String path) {
+        Fitxers file = new Fitxers("./" + path);
+        return file.retornaObjectesFitxer(Animal.class);
+    }
+
     public static void addAnimal(Animal animal) {
         Fitxers file = new Fitxers("./" + animal.getFilePath());
 
