@@ -32,7 +32,7 @@ public class Cow extends MammalAnimal implements IAnimalFunctions {
 
         System.arraycopy(newparams, 0, params, 0, params.length);
 
-        newparams[params.length + 1] = "Punts de llet: " + milkPoints;
+        newparams[params.length] = "Punts de llet: " + milkPoints;
         return newparams;
     }
 

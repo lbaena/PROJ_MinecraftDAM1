@@ -7,8 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import lbaena.projecteminecraft.classes.Animal;
-import lbaena.projecteminecraft.classes.Chicken;
+import lbaena.projecteminecraft.classes.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +22,17 @@ public class ViewController {
         List<Animal> animals = new ArrayList<>();
 
         animals.addAll(Chicken.getChickens());
-        animals.addAll(.getChickens());
-        animals.addAll(Chicken.getChickens());
-        animals.addAll(Chicken.getChickens());
+        animals.addAll(Cow.getCows());
+        animals.addAll(Octupus.getOctopuses());
+        animals.addAll(Fish.getFishes());
 
+        String[][] data = new String[animals.size()][];
 
-        listView.setItems(FXCollections.observableArrayList(datos));
+        for (int i = 0; i < animals.size(); i++) {
+            data[i] = animals.get(i).getParameters();
+        }
+
+        listView.setItems(FXCollections.observableArrayList(data));
 
         listView.setCellFactory(param -> new ListCell<>() {
             @Override

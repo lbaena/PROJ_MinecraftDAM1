@@ -50,9 +50,4 @@ public class RegisterController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-    // 🔹 PLACEHOLDER
-    private boolean fakeRegister(String name, String email, String password) {
-        return !name.isEmpty() && !email.isEmpty() && !password.isEmpty();
-    }
 }
