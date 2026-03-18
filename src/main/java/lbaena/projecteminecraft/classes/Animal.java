@@ -63,6 +63,7 @@ public abstract class Animal implements Serializable {
 
     public String[] getParameters() {
         return new String[] {
+                "Tipus: " + type.name(),
                 "Nom: " + name,
                 "Descripcio: " + description,
                 "Edat: " + age,

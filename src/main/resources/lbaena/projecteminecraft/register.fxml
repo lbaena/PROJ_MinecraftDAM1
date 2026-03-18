@@ -8,20 +8,22 @@
            fx:controller="lbaena.projecteminecraft.javafx.RegisterController"
            prefWidth="500" prefHeight="400">
 
-    <!-- Imagen de fondo -->
     <ImageView fitWidth="500" fitHeight="400" preserveRatio="false">
         <image>
             <Image url="@images/img.png"/>
         </image>
     </ImageView>
 
-    <!-- Contenido -->
     <VBox spacing="10" alignment="CENTER"
-          style="-fx-background-color: rgba(255,255,255,0.05);
+          style="-fx-background-color: rgba(255,255,255,0);
                  -fx-background-radius: 10;"
           maxWidth="300">
 
-        <Label text="Crear Usuario"/>
+        <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: rgba(255,255,255,1);
+                 -fx-background-radius: 10;">
+            <Label text="Crear Usuario" style="-fx-text-fill: black;"/>
+
+        </VBox>
 
         <TextField fx:id="nameField" promptText="Nombre"/>
         <TextField fx:id="emailField" promptText="Email"/>

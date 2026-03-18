@@ -65,30 +65,37 @@ public class ViewController {
 
                 VBox linesBox = new VBox(8);
 
+                StringBuilder sb = new StringBuilder();
                 for (String line : item) {
                     if (line == null || line.isBlank()) {
                         continue;
                     }
 
+                    sb.append(line);
                     Label label = new Label(line);
                     label.setWrapText(true);
 
                     HBox lineBox = new HBox(12);
                     lineBox.setAlignment(Pos.CENTER_LEFT);
 
-                    Image qrImage = getOrCreateQrImage(line);
-                    if (qrImage != null) {
-                        ImageView qrView = new ImageView(qrImage);
-                        qrView.setFitWidth(QR_SIZE);
-                        qrView.setFitHeight(QR_SIZE);
-                        qrView.setPreserveRatio(true);
-                        lineBox.getChildren().addAll(label, qrView);
-                    } else {
-                        lineBox.getChildren().add(label);
-                    }
 
+                    lineBox.getChildren().add(label);
                     linesBox.getChildren().add(lineBox);
                 }
+
+                Image qrImage = getOrCreateQrImage(sb.toString());
+                HBox lineBox2 = new HBox(12);
+                lineBox2.setAlignment(Pos.CENTER_LEFT);
+
+                if (qrImage != null) {
+                    ImageView qrView = new ImageView(qrImage);
+                    qrView.setFitWidth(QR_SIZE);
+                    qrView.setFitHeight(QR_SIZE);
+                    qrView.setPreserveRatio(true);
+                    lineBox2.getChildren().add(qrView);
+                }
+
+                linesBox.getChildren().add(lineBox2);
 
                 setText(null);
                 setContentDisplay(ContentDisplay.GRAPHIC_ONLY);

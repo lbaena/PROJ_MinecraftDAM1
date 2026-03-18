@@ -8,14 +8,12 @@
 
 <StackPane prefHeight="750" prefWidth="600" xmlns:fx="http://javafx.com/fxml/" fx:controller="lbaena.projecteminecraft.javafx.MainMenuController">
 
-    <!-- Fondo -->
     <ImageView fitHeight="750" fitWidth="600" preserveRatio="false">
         <image>
             <Image url="@images/img2.png" />
         </image>
     </ImageView>
 
-    <!-- Botones -->
     <VBox alignment="CENTER" spacing="20">
 
         <Button onAction="#goToCreate" prefHeight="82.0" prefWidth="150.0" text="Crear" />

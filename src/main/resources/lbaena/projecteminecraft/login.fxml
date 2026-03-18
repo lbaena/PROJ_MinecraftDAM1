@@ -10,18 +10,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.geometry.Insets?>
 <StackPane prefHeight="750" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbaena.projecteminecraft.javafx.LoginController">
 
-<!-- Fondo -->
 <ImageView fitHeight="750" fitWidth="600" preserveRatio="false">
     <image>
         <Image url="@images/img.png" />
     </image>
 </ImageView>
 
-<!-- Botones -->
-<VBox alignment="CENTER" spacing="20">
-    <Label text="Iniciar Sessió" />
+<VBox alignment="CENTER" spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: rgba(255,255,255,1);
+                 -fx-background-radius: 10;">
+        <Label text="Iniciar Sessió" />
+
+    </VBox>
+
     <TextField fx:id="emailField" prefHeight="26.0" prefWidth="423.0" promptText="Email" />
     <PasswordField fx:id="passwordField" promptText="Contrasenya" />
 
