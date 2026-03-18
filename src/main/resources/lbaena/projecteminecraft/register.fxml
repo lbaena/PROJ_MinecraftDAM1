@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="lbaena.projecteminecraft.javafx.RegisterController"
+           prefWidth="500" prefHeight="400">
+
+    <!-- Imagen de fondo -->
+    <ImageView fitWidth="500" fitHeight="400" preserveRatio="false">
+        <image>
+            <Image url="@images/image2.png"/>
+        </image>
+    </ImageView>
+
+    <!-- Contenido -->
+    <VBox spacing="10" alignment="CENTER"
+          style="-fx-background-color: rgba(255,255,255,0.05);
+                 -fx-background-radius: 10;"
+          maxWidth="300">
+
+        <Label text="Crear Usuario"/>
+
+        <TextField fx:id="nameField" promptText="Nombre"/>
+        <TextField fx:id="emailField" promptText="Email"/>
+        <PasswordField fx:id="passwordField" promptText="Contraseña"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Registrar" onAction="#handleRegister"/>
+            <Button text="Volver" onAction="#goToLogin"/>
+        </HBox>
+
+    </VBox>
+
+</StackPane>

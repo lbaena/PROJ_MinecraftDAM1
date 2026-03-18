@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="lbaena.projecteminecraft.javafx.LoginController"
+      prefWidth="500" prefHeight="400"
+      minWidth="500" minHeight="400">
+
+    <!-- Imagen superior -->
+    <ImageView fitHeight="165" fitWidth="400" preserveRatio="false">
+        <!-- 🔹 Cambia la ruta a tu imagen -->
+        <Image url="@images/image.png"/>
+    </ImageView>
+
+    <!-- Contenido -->
+    <VBox spacing="10" alignment="CENTER" VBox.vgrow="ALWAYS">
+
+        <Label text="Iniciar Sesión"/>
+
+        <TextField fx:id="emailField" promptText="Email"/>
+        <PasswordField fx:id="passwordField" promptText="Contraseña"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Iniciar Sesión" onAction="#handleLogin"/>
+            <Button text="Crear Usuario" onAction="#goToRegister"/>
+        </HBox>
+
+    </VBox>
+
+</VBox>

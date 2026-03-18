@@ -40,7 +40,7 @@ public class UserHandler {
 
     public User getUserByLogin(String email, String password) {
         User user = getUserByEmail(email);
-        return user.hasValidCredentials(email, password) ? user : null;
+        return user != null && user.hasValidCredentials(email, password) ? user : null;
     }
 
     public boolean addNewUser(String username, String email, String password){

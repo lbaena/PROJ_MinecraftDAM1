@@ -5,8 +5,11 @@ module lbaena.projecteminecraft {
     requires com.google.zxing;
     requires java.desktop;
     requires com.google.zxing.javase;
+    requires java.sql;
 
 
     opens lbaena.projecteminecraft to javafx.fxml;
     exports lbaena.projecteminecraft;
+    exports lbaena.projecteminecraft.javafx;
+    opens lbaena.projecteminecraft.javafx to javafx.fxml;
 }

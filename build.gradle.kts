@@ -29,7 +29,7 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("lbaena.projecteminecraft")
-    mainClass.set("lbaena.projecteminecraft.HelloApplication")
+    mainClass.set("lbaena.projecteminecraft.javafx.Application")
 }
 
 javafx {

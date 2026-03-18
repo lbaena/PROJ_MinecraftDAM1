@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="lbaena.projecteminecraft.javafx.MainMenuController"
+           prefWidth="600" prefHeight="750">
+
+    <!-- Fondo -->
+    <ImageView fitWidth="600" fitHeight="750" preserveRatio="false">
+        <image>
+            <Image url="@images/image.png"/>
+        </image>
+    </ImageView>
+
+    <!-- Botones -->
+    <VBox spacing="20" alignment="CENTER">
+
+        <Button text="Crear" onAction="#goToCreate" prefWidth="200" prefHeight="40"/>
+        <Button text="Eliminar" onAction="#goToDelete" prefWidth="200" prefHeight="40"/>
+        <Button text="Ver" onAction="#goToView" prefWidth="200" prefHeight="40"/>
+
+    </VBox>
+
+</StackPane>

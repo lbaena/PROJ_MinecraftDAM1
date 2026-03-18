@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="lbaena.projecteminecraft.javafx.DeleteController"
+      prefWidth="600" prefHeight="750">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Eliminar Registro"/>
+
+    <ListView fx:id="listView" prefWidth="300" prefHeight="300"/>
+
+    <Button text="Eliminar" onAction="#handleDelete" prefWidth="150"/>
+
+</VBox>
