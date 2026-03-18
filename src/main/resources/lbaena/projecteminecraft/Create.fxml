@@ -4,21 +4,83 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="15" alignment="CENTER"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="lbaena.projecteminecraft.javafx.CreateController"
-      prefWidth="600" prefHeight="750">
+<ScrollPane fitToWidth="true" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="lbaena.projecteminecraft.javafx.CreateController"
+            prefWidth="600" prefHeight="700">
 
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+    <VBox spacing="15" alignment="CENTER" prefWidth="580">
 
-    <Label text="Crear Registro"/>
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
 
-    <TextField fx:id="field1" promptText="Campo 1" prefWidth="250"/>
-    <TextField fx:id="field2" promptText="Campo 2" prefWidth="250"/>
-    <TextField fx:id="field3" promptText="Campo 3" prefWidth="250"/>
+        <Label text="Crear animal" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
-    <Button text="Crear" onAction="#handleCreate" prefWidth="150"/>
+        <Label text="Tipus d'animal:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="animalClassCombo" promptText="Selecciona el tipus" prefWidth="250"/>
 
-</VBox>
+        <Label text="Dades bàsiques:" style="-fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nom:" minWidth="100"/>
+            <TextField fx:id="nameField" promptText="Nom" prefWidth="250"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Descripció:" minWidth="100"/>
+            <TextArea fx:id="descriptionField" promptText="Descripció" prefWidth="250" prefRowCount="3"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Edat:" minWidth="100"/>
+            <TextField fx:id="ageField" promptText="Edat" prefWidth="250"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Sexe:" minWidth="100"/>
+            <ComboBox fx:id="genderCombo" promptText="Selecciona el sexe" prefWidth="250"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Pes:" minWidth="100"/>
+            <TextField fx:id="weightField" promptText="Pes (kg)" prefWidth="250"/>
+        </HBox>
+
+        <Label text="Salut:" style="-fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Punts de salut:" minWidth="100"/>
+            <Spinner fx:id="healthPointsSpinner" prefWidth="250"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nivell de fam:" minWidth="100"/>
+            <Spinner fx:id="hungerSpinner" prefWidth="250"/>
+        </HBox>
+
+        <Label text="Assignació automàtica:" style="-fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Tipus:" minWidth="100"/>
+            <TextField fx:id="typeField" promptText="S'assigna automàticament" prefWidth="250" editable="false"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Hàbitat:" minWidth="100"/>
+            <TextField fx:id="habitatField" promptText="S'assigna automàticament" prefWidth="250" editable="false"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="UUID:" minWidth="100"/>
+            <TextField fx:id="uuidField" promptText="Es genera automàticament" prefWidth="250" editable="false"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Crea" onAction="#handleCreate" prefWidth="140"/>
+            <Button text="Torna" onAction="#goToMenu" prefWidth="140"/>
+        </HBox>
+
+
+    </VBox>
+
+</ScrollPane>

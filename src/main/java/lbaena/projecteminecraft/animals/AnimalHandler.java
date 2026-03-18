@@ -3,7 +3,9 @@ package lbaena.projecteminecraft.animals;
 import lbaena.projecteminecraft.classes.Animal;
 import lbaena.projecteminecraft.fitxers.Fitxers;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class AnimalHandler {
     public static Object getAnimals(String path) {
@@ -63,5 +65,46 @@ public class AnimalHandler {
         }
 
         return true;
+    }
+
+    public static boolean removeAnimalByTypeAndName(String animalType, String name) {
+        String filePath = animalType.trim().toLowerCase(Locale.ROOT) + ".dat";
+
+        if (filePath == null || name == null || name.trim().isEmpty()) {
+            return false;
+        }
+
+        Fitxers file = new Fitxers("./" + filePath);
+        List<Animal> animals = (List<Animal>) file.retornaObjectesFitxer(Animal.class);
+
+        if (animals == null) {
+            animals = new ArrayList<>();
+        }
+
+        String normalizedName = name.trim();
+        boolean removed = false;
+
+        for (int i = 0; i < animals.size(); i++) {
+            Animal current = animals.get(i);
+            if (current.name != null && current.name.equalsIgnoreCase(normalizedName)) {
+                animals.remove(i);
+                removed = true;
+                break;
+            }
+        }
+
+        if (!removed) {
+            return false;
+        }
+
+        try {
+            file.eliminarFitxerDirectori();
+            for (Animal animal : animals) {
+                file.escriuObjecteFitxer(animal, true);
+            }
+            return true;
+        } catch (Exception ignored) {
+            return false;
+        }
     }
 }

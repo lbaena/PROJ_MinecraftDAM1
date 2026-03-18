@@ -11,7 +11,7 @@
     <!-- Imagen de fondo -->
     <ImageView fitWidth="500" fitHeight="400" preserveRatio="false">
         <image>
-            <Image url="@images/image2.png"/>
+            <Image url="@images/img.png"/>
         </image>
     </ImageView>
 

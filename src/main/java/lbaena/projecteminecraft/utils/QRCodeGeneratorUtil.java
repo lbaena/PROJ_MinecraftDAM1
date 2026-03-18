@@ -1,8 +1,10 @@
 package lbaena.projecteminecraft.utils;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import com.google.zxing.BarcodeFormat;
@@ -21,15 +23,17 @@ import lombok.Setter;
 @NoArgsConstructor
 public class QRCodeGeneratorUtil {
 
-    public static void createQR(String data, String path, int width, int height)
+    public static String createQR(String data, int width, int height)
             throws WriterException, IOException {
         Map<EncodeHintType, ErrorCorrectionLevel> hints = new HashMap<>();
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
 
         String content = new String(data.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
         BitMatrix matrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        MatrixToImageWriter.writeToStream(matrix, "PNG", outputStream);
 
-        MatrixToImageWriter.writeToPath(matrix, path.substring(path.lastIndexOf('.') + 1), Paths.get(path));
+        return Base64.getEncoder().encodeToString(outputStream.toByteArray());
     }
 
 }

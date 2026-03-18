@@ -27,10 +27,10 @@ public class RegisterController {
         UserHandler handler = new UserHandler();
 
         if (handler.addNewUser(name, email, password)) {
-            showAlert("Éxito", "Usuario creado correctamente");
+            showAlert("Éxito", "Usuari creat correctament");
             goToLogin();
         } else {
-            showAlert("Error", "No se pudo crear el usuario");
+            showAlert("Error", "No s'ha pogut crear l'usuari. Revisa les dades i torna-ho a intentar.");
         }
     }
 
